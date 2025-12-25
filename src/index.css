@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* GFG-inspired dark theme */
+    --background: 220 20% 6%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 20% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    /* GFG Green */
+    --primary: 139 50% 42%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 139 60% 50%;
+
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 139 50% 42%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 139 50% 42%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --glow-green: 0 0 40px hsl(139 60% 50% / 0.4);
+    --glow-green-strong: 0 0 60px hsl(139 60% 50% / 0.6);
+    --gradient-green: linear-gradient(135deg, hsl(139 50% 42%), hsl(160 60% 35%));
+    --gradient-dark: linear-gradient(180deg, hsl(220 20% 8%), hsl(220 20% 4%));
+    --gradient-card: linear-gradient(145deg, hsl(220 20% 12%), hsl(220 20% 8%));
+    --grid-color: hsl(139 50% 42% / 0.08);
+
+    /* Sidebar */
+    --sidebar-background: 220 20% 8%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 139 50% 42%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 139 50% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-emerald-400;
+  }
+
+  .glow-box {
+    box-shadow: var(--glow-green);
+  }
+
+  .glow-box-strong {
+    box-shadow: var(--glow-green-strong);
+  }
+
+  .grid-pattern {
+    background-image: 
+      linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .code-block {
+    @apply font-mono text-sm bg-secondary/50 rounded-lg p-4 border border-border;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_30px_hsl(139_60%_50%_/_0.15)];
+  }
+
+  .btn-glow {
+    @apply relative overflow-hidden;
+  }
+
+  .btn-glow::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-primary/20 to-emerald-500/20 opacity-0 transition-opacity duration-300;
+  }
+
+  .btn-glow:hover::before {
+    @apply opacity-100;
+  }
+
+  .terminal-cursor {
+    @apply inline-block w-2 h-5 bg-primary animate-pulse;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px hsl(139 60% 50% / 0.3); }
+  50% { box-shadow: 0 0 40px hsl(139 60% 50% / 0.5); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
+/* Hide Spline watermark - Targeted approach */
+a[href*="spline.design"],
+a[href*="spline"][href*="design"],
+[data-spline-watermark],
+.spline-watermark {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
