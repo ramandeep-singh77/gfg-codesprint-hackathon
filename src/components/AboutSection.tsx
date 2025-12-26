@@ -4,18 +4,21 @@ const AboutSection = () => {
   const features = [
     {
       icon: Brain,
-      title: "DSA-First Approach",
-      description: "Apply data structures and algorithms to solve complex, real-world problems.",
+      title: "Problem Solving",
+      description:
+        "Tackle challenging problems that test your analytical and coding skills.",
     },
     {
       icon: Code,
-      title: "Learn by Building",
-      description: "Transform theoretical knowledge into practical, working solutions.",
+      title: "Hands-On Development",
+      description:
+        "Build innovative projects from scratch with cutting-edge technologies.",
     },
     {
       icon: Users,
       title: "Community Driven",
-      description: "Collaborate with like-minded developers and industry mentors.",
+      description:
+        "Collaborate with like-minded developers and industry mentors.",
     },
     {
       icon: BookOpen,
@@ -28,7 +31,7 @@ const AboutSection = () => {
     <section id="about" className="relative py-24 overflow-hidden">
       {/* Background accent */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-      
+
       <div className="container px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section header */}
@@ -40,9 +43,9 @@ const AboutSection = () => {
               More Than a <span className="text-gradient">Hackathon</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              This isn't your typical coding marathon. We're bridging the gap between 
-              competitive programming and real-world impact. Bring your algorithmic skills, 
-              leave with solutions that matter.
+              This isn't your typical coding marathon. We're bridging the gap
+              between competitive programming and real-world impact. Bring your
+              algorithmic skills, leave with solutions that matter.
             </p>
           </div>
 
@@ -57,7 +60,9 @@ const AboutSection = () => {
                   <feature.icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
+                <p className="text-sm text-muted-foreground">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
@@ -68,14 +73,16 @@ const AboutSection = () => {
               <div className="w-3 h-3 rounded-full bg-destructive/80" />
               <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
               <div className="w-3 h-3 rounded-full bg-primary/80" />
-              <span className="ml-4 text-muted-foreground">hackathon.config</span>
+              <span className="ml-4 text-muted-foreground">
+                hackathon.config
+              </span>
             </div>
             <pre className="text-muted-foreground">
               <code>
-{`const hackathon = {
+                {`const hackathon = {
   name: "GFG CodeSprint",
-  duration: "48 hours",
-  focus: ["DSA", "Real-World Problems", "Innovation"],
+  duration: "36 hours",
+  focus: ["Problem Solving", "Real-World Problems", "Innovation"],
   goal: "Transform algorithms into impact",
   status: "REGISTRATIONS_OPEN"
 };`}

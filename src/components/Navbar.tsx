@@ -34,10 +34,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-lg font-bold text-primary-foreground">G</span>
-            </div>
-            <span className="font-bold text-lg hidden sm:block">GFG CodeSprint</span>
+            <span className="font-bold text-lg hidden sm:block">
+              Geekverse v2
+            </span>
           </a>
 
           {/* Desktop Navigation */}

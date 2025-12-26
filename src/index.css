@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -42,7 +42,11 @@
     /* Custom design tokens */
     --glow-green: 0 0 40px hsl(139 60% 50% / 0.4);
     --glow-green-strong: 0 0 60px hsl(139 60% 50% / 0.6);
-    --gradient-green: linear-gradient(135deg, hsl(139 50% 42%), hsl(160 60% 35%));
+    --gradient-green: linear-gradient(
+      135deg,
+      hsl(139 50% 42%),
+      hsl(160 60% 35%)
+    );
     --gradient-dark: linear-gradient(180deg, hsl(220 20% 8%), hsl(220 20% 4%));
     --gradient-card: linear-gradient(145deg, hsl(220 20% 12%), hsl(220 20% 8%));
     --grid-color: hsl(139 50% 42% / 0.08);
@@ -68,7 +72,12 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display;
   }
 }
@@ -87,8 +96,11 @@
   }
 
   .grid-pattern {
-    background-image: 
-      linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    background-image: linear-gradient(
+        to right,
+        var(--grid-color) 1px,
+        transparent 1px
+      ),
       linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
     background-size: 60px 60px;
   }
@@ -106,7 +118,7 @@
   }
 
   .btn-glow::before {
-    content: '';
+    content: "";
     @apply absolute inset-0 bg-gradient-to-r from-primary/20 to-emerald-500/20 opacity-0 transition-opacity duration-300;
   }
 
@@ -136,31 +148,63 @@
     animation: fade-in-up 0.8s ease-out forwards;
   }
 
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-400 { animation-delay: 400ms; }
-  .delay-500 { animation-delay: 500ms; }
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+  .delay-500 {
+    animation-delay: 500ms;
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 20px hsl(139 60% 50% / 0.3); }
-  50% { box-shadow: 0 0 40px hsl(139 60% 50% / 0.5); }
+  0%,
+  100% {
+    box-shadow: 0 0 20px hsl(139 60% 50% / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(139 60% 50% / 0.5);
+  }
 }
 
 @keyframes slide-up {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Scrollbar styling */
@@ -178,14 +222,4 @@
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-muted-foreground/50;
-}
-/* Hide Spline watermark - Targeted approach */
-a[href*="spline.design"],
-a[href*="spline"][href*="design"],
-[data-spline-watermark],
-.spline-watermark {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
 }

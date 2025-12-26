@@ -1,19 +1,6 @@
-const SponsorsSection = () => {
-  const sponsors = {
-    title: [
-      { name: "TechCorp", tier: "Title Sponsor" },
-    ],
-    learning: [
-      { name: "GFG", tier: "Learning Partner" },
-      { name: "Coursera", tier: "Learning Partner" },
-    ],
-    community: [
-      { name: "DevCommunity", tier: "Community Partner" },
-      { name: "HackerEarth", tier: "Community Partner" },
-      { name: "CodeChef", tier: "Community Partner" },
-    ],
-  };
+import { Handshake } from "lucide-react";
 
+const SponsorsSection = () => {
   return (
     <section id="sponsors" className="relative py-24 overflow-hidden">
       <div className="container px-6">
@@ -31,60 +18,27 @@ const SponsorsSection = () => {
             </p>
           </div>
 
-          {/* Title Sponsor */}
-          <div className="mb-12">
-            <p className="text-center text-xs font-mono text-muted-foreground mb-6">TITLE SPONSOR</p>
-            <div className="flex justify-center">
-              {sponsors.title.map((sponsor, index) => (
-                <div
-                  key={index}
-                  className="w-64 h-32 rounded-2xl bg-gradient-to-br from-primary/20 to-card border border-primary/30 flex items-center justify-center glow-box card-hover cursor-pointer"
-                >
-                  <span className="text-3xl font-bold text-gradient">{sponsor.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Learning Partners */}
-          <div className="mb-12">
-            <p className="text-center text-xs font-mono text-muted-foreground mb-6">LEARNING PARTNERS</p>
-            <div className="flex flex-wrap justify-center gap-6">
-              {sponsors.learning.map((sponsor, index) => (
-                <div
-                  key={index}
-                  className="w-48 h-24 rounded-xl bg-card border border-border flex items-center justify-center card-hover cursor-pointer"
-                >
-                  <span className="text-xl font-semibold text-muted-foreground hover:text-foreground transition-colors">
-                    {sponsor.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Community Partners */}
-          <div>
-            <p className="text-center text-xs font-mono text-muted-foreground mb-6">COMMUNITY PARTNERS</p>
-            <div className="flex flex-wrap justify-center gap-4">
-              {sponsors.community.map((sponsor, index) => (
-                <div
-                  key={index}
-                  className="px-8 py-4 rounded-lg bg-card/50 border border-border flex items-center justify-center card-hover cursor-pointer"
-                >
-                  <span className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
-                    {sponsor.name}
-                  </span>
-                </div>
-              ))}
+          {/* Coming soon message */}
+          <div className="flex justify-center mb-12">
+            <div className="p-12 rounded-2xl bg-gradient-to-br from-primary/20 to-card border border-primary/30 glow-box max-w-2xl w-full text-center">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center mx-auto mb-6">
+                <Handshake className="w-10 h-10 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold mb-3">Soon to be Announced</h3>
+              <p className="text-muted-foreground mb-6">
+                We're partnering with amazing sponsors and organizations. The
+                full list will be revealed soon!
+              </p>
             </div>
           </div>
 
           {/* Become a sponsor CTA */}
           <div className="mt-16 text-center">
-            <p className="text-muted-foreground mb-4">Interested in sponsoring?</p>
-            <a 
-              href="#contact" 
+            <p className="text-muted-foreground mb-4">
+              Interested in sponsoring?
+            </p>
+            <a
+              href="#contact"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
             >
               Become a Partner →
